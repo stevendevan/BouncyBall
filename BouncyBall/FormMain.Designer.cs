@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.timerPhysics = new System.Windows.Forms.Timer(this.components);
-            this.ball1 = new BouncyBall.Ball();
+            this.ball = new BouncyBall.Ball();
             this.SuspendLayout();
             // 
             // label1
@@ -47,18 +47,20 @@
             // timerPhysics
             // 
             this.timerPhysics.Interval = 4;
-            this.timerPhysics.Tick += new System.EventHandler(this.timerPhysics_Tick);
+            this.timerPhysics.Tick += new System.EventHandler(this.TimerPhysics_Tick);
             // 
-            // ball1
+            // ball
             // 
-            this.ball1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ball1.Enabled = false;
-            this.ball1.Location = new System.Drawing.Point(206, 59);
-            this.ball1.Name = "ball1";
-            this.ball1.Size = new System.Drawing.Size(75, 23);
-            this.ball1.TabIndex = 1;
-            this.ball1.TabStop = false;
-            this.ball1.Text = "ball1";
+            this.ball.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ball.Enabled = false;
+            this.ball.Location = new System.Drawing.Point(206, 59);
+            this.ball.Margin = new System.Windows.Forms.Padding(0);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(41, 23);
+            this.ball.TabIndex = 1;
+            this.ball.TabStop = false;
+            this.ball.Text = "ball1";
+            this.ball.Visible = false;
             // 
             // FormMain
             // 
@@ -66,7 +68,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.ball1);
+            this.Controls.Add(this.ball);
             this.Controls.Add(this.label1);
             this.Name = "FormMain";
             this.Text = "Form1";
@@ -83,7 +85,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerPhysics;
-        private Ball ball1;
+        private Ball ball;
     }
 }
 

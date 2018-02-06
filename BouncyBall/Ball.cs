@@ -10,8 +10,8 @@ namespace BouncyBall
 {
     class Ball : Control // sealed?
     {
-        private int radius = 20;
-        
+        private int _radius = 20;
+
         //private int xPos;
         //private int yPos;
         //private int mass;
@@ -28,10 +28,16 @@ namespace BouncyBall
         //    UpdatePositionOnMouse(mouseX, mouseY);
         //}
 
+        public int Radius
+        {
+            get { return this._radius; }
+            set { this._radius = value; }
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             //e.Graphics.FillEllipse(new SolidBrush(Color.White), this.xPos, this.yPos, this.xPos + radius, this.yPos + radius);
-            e.Graphics.FillEllipse(new SolidBrush(Color.White), 0, 0, 10, 10);
+            e.Graphics.FillEllipse(new SolidBrush(Color.White), 0, 0, _radius, _radius);
 
         }
 

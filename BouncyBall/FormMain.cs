@@ -14,6 +14,7 @@ namespace BouncyBall
     {
         //private Ball ball = new Ball();
         bool mouseDownLeft = false;
+        private int radius = 40;
 
         public FormMain()
         {
@@ -24,8 +25,8 @@ namespace BouncyBall
         {
             if (mouseDownLeft)
             {
-                ball1.Location = new Point(e.Location.X, e.Location.Y);
-                //ball1.Invalidate();
+                ball.Location = new Point(e.Location.X - (int)(this.radius / 2), e.Location.Y - (int)(this.radius / 2));
+                //ball.Update(); //not sure if this is needed. Invalidate() causes flickering
             }
         }
 
@@ -39,7 +40,7 @@ namespace BouncyBall
         {
             if (e.Button == MouseButtons.Left)
             {
-                mouseDownLeft = false;
+                this.mouseDownLeft = false;
             }
         }
 
@@ -47,9 +48,12 @@ namespace BouncyBall
         {
             if (e.Button == MouseButtons.Left)
             {
-                mouseDownLeft = true;
-                ball1.Location = new Point(e.Location.X, e.Location.Y);
-                //ball.Visible = true;
+                this.mouseDownLeft = true;
+                this.ball.Radius = radius;
+                this.ball.Width = radius;
+                this.ball.Height = radius;
+                this.ball.Visible = true;
+                this.ball.Location = new Point((int)(this.Width - this.label1.Width) / 2, (int)(this.Height - this.label1.Height) / 2);
                 //ball.Location = new Point(e.Location.X, e.Location.Y);
                 //ball.Invalidate();
                 this.label1.Visible = false;
@@ -61,14 +65,15 @@ namespace BouncyBall
             if (e.Button == MouseButtons.Right)
             {
                 this.label1.Visible = true;
+                this.ball.Visible = false;
             }
         }
 
-        private void timerPhysics_Tick(object sender, EventArgs e)
+        private void TimerPhysics_Tick(object sender, EventArgs e)
         {
             if (mouseDownLeft == false)
             {
-                // run physics calcs and invalidate ball
+                this.ball.Location = new Point(50,50);
             }
         }
 
