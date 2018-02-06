@@ -18,12 +18,6 @@ namespace BouncyBall
         public FormMain()
         {
             InitializeComponent();
-            //this.MouseClick += new MouseEventHandler(Form1_MouseClick);
-            this.MouseDown += new MouseEventHandler(FormMain_MouseDown);
-            this.MouseUp   += new MouseEventHandler(FormMain_MouseUp);
-            this.MouseClick += new MouseEventHandler(FormMain_MouseClick);
-            this.MouseMove += new MouseEventHandler(FormMain_MouseMove);
-            //this.OnResize += new ContentsResizedEventHandler
         }
 
         private void FormMain_MouseMove(object sender, MouseEventArgs e)

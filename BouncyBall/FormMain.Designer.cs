@@ -51,10 +51,13 @@
             // 
             // ball1
             // 
+            this.ball1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ball1.Enabled = false;
             this.ball1.Location = new System.Drawing.Point(206, 59);
             this.ball1.Name = "ball1";
             this.ball1.Size = new System.Drawing.Size(75, 23);
             this.ball1.TabIndex = 1;
+            this.ball1.TabStop = false;
             this.ball1.Text = "ball1";
             // 
             // FormMain
@@ -67,6 +70,10 @@
             this.Controls.Add(this.label1);
             this.Name = "FormMain";
             this.Text = "Form1";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
