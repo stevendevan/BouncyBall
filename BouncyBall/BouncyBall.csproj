@@ -48,6 +48,7 @@
     <Compile Include="Ball.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BallPhysics.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
