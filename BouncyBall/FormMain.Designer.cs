@@ -46,7 +46,7 @@
             // 
             // timerPhysics
             // 
-            this.timerPhysics.Interval = 4;
+            this.timerPhysics.Interval = 7;
             this.timerPhysics.Tick += new System.EventHandler(this.TimerPhysics_Tick);
             // 
             // ball
@@ -56,6 +56,7 @@
             this.ball.Location = new System.Drawing.Point(206, 59);
             this.ball.Margin = new System.Windows.Forms.Padding(0);
             this.ball.Name = "ball";
+            this.ball.Radius = 0;
             this.ball.Size = new System.Drawing.Size(41, 23);
             this.ball.TabIndex = 1;
             this.ball.TabStop = false;

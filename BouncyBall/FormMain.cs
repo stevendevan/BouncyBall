@@ -16,10 +16,10 @@ namespace BouncyBall
         private bool ResetPhysics;
         private bool mouseDownLeft = false;
         private int radius = 40;
-        private int xPrev = 0;
-        private int yPrev = 0;
-        //private int xCurr = 0;
-        //private int yCurr = 0;
+        //private int xPrev = 0;
+        //private int yPrev = 0;
+        private Point posPrev = new Point(0, 0);
+        private Point posCurr = new Point(0, 0);
 
         public FormMain()
         {
@@ -80,15 +80,17 @@ namespace BouncyBall
             if (mouseDownLeft == true)
             {
                 ResetPhysics = true;
-                xPrev = MousePosition.X;
-                yPrev = MousePosition.Y;
+                //this.xPrev = MousePosition.X;
+                //this.yPrev = MousePosition.Y;
+                this.posPrev = this.PointToClient(Cursor.Position);
             }
 
             if (mouseDownLeft == false)
             {
                 if (ResetPhysics == true)
                 {
-                    Physics = new BallPhysics(MousePosition.X, xPrev, MousePosition.Y, yPrev, timerPhysics.Interval * .001f);
+                    this.posCurr = this.PointToClient(Cursor.Position);
+                    Physics = new BallPhysics(this.posCurr.X, this.posPrev.X, this.posCurr.Y, this.posPrev.Y, timerPhysics.Interval * .001f);
                     ResetPhysics = false;
                 }
                 
